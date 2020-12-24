@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="Alexandr Muhachev">
+		<link rel="icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;subset=cyrillic" rel="stylesheet">
+		
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: 'Roboto', sans-serif
+			}
+		
+			* {
+				outline: none
+			}
+		
+			input,
+			button {
+				border: none
+			}
+		
+			button {
+				cursor: pointer
+			}
+		
+			.menu-big {
+				background-color: #373737;
+				padding-top: 17px;
+				padding-bottom: 16px;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 1000
+			}
+		
+			.menu-big .menu__list {
+				margin-top: 0;
+				margin-bottom: 0;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: row;
+				flex-direction: row;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+				list-style: none;
+				padding-left: 0
+			}
+		
+			.menu-big .menu__list__item {
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 22px;
+				text-transform: uppercase;
+				border-right: 1px dotted white;
+				padding-right: 15px;
+				text-align: center
+			}
+		
+			.menu-big .menu__list__item-last {
+				padding-right: 0;
+				border-right: none
+			}
+		
+			.menu-big .menu__list__item a {
+				text-decoration: none;
+				color: #fff
+			}
+		
+			.header__logo {
+				margin-left: 30px
+			}
+		
+			.menu-link {
+				display: block;
+				position: fixed;
+				top: 38px;
+				left: 15px;
+				width: 23px;
+				height: 17px;
+				z-index: 10001
+			}
+		
+			.menu-link span {
+				display: block;
+				position: absolute;
+				height: 3px;
+				width: 22px;
+				background-color: #000;
+				z-index: 15
+			}
+		
+			.menu-link span::before {
+				content: '';
+				margin-top: -8px;
+				display: block;
+				position: absolute;
+				height: 3px;
+				width: 22px;
+				background-color: #000;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s
+			}
+		
+			.menu-link span::after {
+				content: '';
+				margin-top: 8px;
+				display: block;
+				position: absolute;
+				height: 3px;
+				width: 22px;
+				background-color: #000;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s
+			}
+		
+			.menu-link-active span {
+				background-color: transparent
+			}
+		
+			.menu-link-active span:before {
+				-webkit-transform: rotate(135deg);
+				transform: rotate(135deg);
+				margin-top: 0
+			}
+		
+			.menu-link-active span:after {
+				-webkit-transform: rotate(-135deg);
+				transform: rotate(-135deg);
+				margin-top: 0
+			}
+		
+			.header {
+				padding-top: 61px;
+				padding-bottom: 15px;
+				background-color: #f4f4f4
+			}
+		
+			.header__logo {
+				background: url(img/logo.png) center no-repeat;
+				background-size: 100%;
+				width: 191px;
+				height: 61px
+			}
+		
+			.header__contacts {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: end;
+				-ms-flex-pack: end;
+				justify-content: flex-end;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center
+			}
+		
+			.header__contacts__wrapper {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: end;
+				-ms-flex-pack: end;
+				justify-content: flex-end;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center
+			}
+		
+			.header__contacts__wrapper__phone {
+				font-size: 22px;
+				padding-left: 13px;
+				margin-right: 13px;
+				height: 22px
+			}
+		
+			.header__contacts__wrapper__phone-b {
+				border-left: 1px solid rgba(0, 0, 0, 0.2)
+			}
+		
+			.main {
+				position: relative;
+				padding-top: 65px;
+				padding-bottom: 60px;
+				background: #373737 url(img/main/bg.jpg) center no-repeat;
+				background-size: cover;
+				color: #fff;
+				z-index: 1
+			}
+		
+			.main::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.6);
+				z-index: 0
+			}
+		
+			.main__img {
+				position: relative
+			}
+		
+			.main__img::before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				width: 350px;
+				height: 350px;
+				left: 50%;
+				margin-left: -195px;
+				border: 1px solid #ffffff;
+				border-radius: 50%
+			}
+		
+			.main__text__title {
+				margin-bottom: 20px;
+				font-size: 41px;
+				font-weight: 700
+			}
+		
+			.main__text__subtitle {
+				font-size: 28px;
+				font-weight: 300;
+				margin-bottom: 27px
+			}
+		
+			.main__text__form {
+				background-color: rgba(255, 255, 255, 0.2);
+				padding: 30px 27px
+			}
+		
+			.main__text__form__title {
+				padding-right: 70px;
+				font-size: 20px;
+				font-weight: 300;
+				line-height: 30px;
+				margin-bottom: 20px
+			}
+		
+			.main__text__form__title__upper {
+				display: block;
+				font-weight: 700;
+				text-transform: uppercase
+			}
+		
+			.main__form {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				margin-bottom: 12px
+			}
+		
+			.main__form input {
+				margin-right: 10px;
+				border: none;
+				border-radius: 4px;
+				padding: 20px;
+				vertical-align: middle;
+				-ms-flex-preferred-size: 60%;
+				flex-basis: 60%;
+				outline: none
+			}
+		
+			.main__form__small {
+				font-size: 14px;
+				font-weight: 300
+			}
+		
+			.main .slick-dots li button:before,
+			.main .slick-dots li button:before {
+				color: #fff
+			}
+		
+			img {
+				max-width: 100%
+			}
+		
+			@media (max-width:576px) {
+				.hidden-mobile {
+					display: none
+				}
+		
+				.header {
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					z-index: 1000;
+					text-align: center
+				}
+		
+				.header__logo {
+					background: #ff9d00 url(img/logo-mobile.png) center no-repeat;
+					width: 35px;
+					height: 35px
+				}
+		
+				.header__contacts__wrapper {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					margin-top: 5px
+				}
+		
+				.header__contacts__wrapper__phone {
+					font-size: 14px;
+					padding-left: 0;
+					margin-right: auto
+				}
+		
+				.header__contacts__wrapper__phone-b {
+					border-left: none
+				}
+		
+				.header__contacts__wrapper__phone .bold-phone {
+					font-weight: 700
+				}
+		
+				.header .call-btn {
+					display: inline-block;
+					vertical-align: middle;
+					width: 40px;
+					height: 40px;
+					padding: 0
+				}
+		
+				.header .call-btn img {
+					width: 20px
+				}
+		
+				.main {
+					margin-top: 50px;
+					text-align: center;
+					padding-top: 50px
+				}
+		
+				.main__text__title {
+					color: #ff9d00;
+					font-size: 22px
+				}
+		
+				.main__text__subtitle {
+					font-size: 18px;
+					margin-bottom: 40px
+				}
+		
+				.main__text__form {
+					background-color: transparent;
+					padding: 10px
+				}
+		
+				.main__text__form__title {
+					padding-right: 0;
+					font-size: 15px;
+					line-height: 1.4
+				}
+		
+				.main__text__form .main__form {
+					display: block;
+					text-align: center
+				}
+		
+				.main__text__form .main__form input {
+					display: block;
+					margin-bottom: 13px;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: center
+				}
+		
+				.main__text__form .main__form button {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					padding-top: 20px;
+					padding-bottom: 20px
+				}
+			}
+		
+				@media (min-width:577px) and (max-width:768px) {
+					.hidden-mobile {
+						display: none
+					}
+		
+					.header {
+						position: fixed;
+						top: 0;
+						left: 0;
+						right: 0;
+						z-index: 10;
+						text-align: centers
+					}
+		
+					.header__logo {
+						background: #ff9d00 url(img/logo-mobile.png) center no-repeat;
+						width: 35px;
+						height: 35px
+					}
+		
+					.header__logo {
+						margin-left: 10px
+					}
+		
+					.header__contacts__wrapper {
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: 10px
+					}
+		
+					.header__contacts__wrapper__phone {
+						font-size: 18px
+					}
+		
+					.header__contacts__wrapper__phone .bold-phone {
+						font-weight: 700
+					}
+		
+					.header__contacts__wrapper__phone-b {
+						border-left: none
+					}
+		
+					.header .call-btn {
+						vertical-align: middle
+					}
+		
+					.header .call-btn span {
+						display: none
+					}
+		
+					.main {
+						margin-top: 50px;
+						text-align: center
+					}
+		
+					.main__ing {
+						display: none
+					}
+		
+					.main__text__form__title {
+						padding-right: 0
+					}
+				}
+		
+					@media (min-width:769px) and (max-width:992px) {
+						.header__contacts__wrapper {
+							display: inline-block;
+							vertical-align: middle;
+							margin-right: 10px
+						}
+		
+						.header__contacts__wrapper__phone {
+							font-size: 18px
+						}
+		
+						.header__contacts__wrapper__phone-b {
+							border-left: none
+						}
+		
+						.header__contacts__wrapper__phone .bold-phone {
+							font-weight: 700
+						}
+		
+						.header .call-btn {
+							vertical-align: middle
+						}
+		
+						.main__img {
+							display: none
+						}
+					}
+		
+						@media (min-width:992px) {
+							.container {
+								width: 968px
+							}
+						}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="menu">
+			<div class="menu-big">
+				<div class="container">
+					<div class="menu-wrapper">
+						<ul class="menu__list">
+							<li class="menu__list__item"><a href="#about">О компании</a></li>
+							<li class="menu__list__item"><a href="#features">преимущества</a></li>
+							<li class="menu__list__item"><a href="#products">Продукция</a></li>
+							<li class="menu__list__item"><a href="#production">производство</a></li>
+							<li class="menu__list__item"><a href="#clients">наши клиенты</a></li>
+							<li class="menu__list__item"><a href="#feedback">Отзывы</a></li>
+							<li class="menu__list__item"><a href="#feedback">Сертификаты</a></li>
+							<li class="menu__list__item"><a href="#map">склад</a></li>
+							<li class="menu__list__item menu__list__item-last"><a href="#contacts">контакты</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /.menu-big -->
+			<div class="menu-mobile">
+				<ul class="menu__list">
+					<li><a class="menu__list__item" href="#main">О компании</a></li>
+					<li><a class="menu__list__item" href="#features">преимущества</a></li>
+					<li><a class="menu__list__item" href="#products">Продукция</a></li>
+					<li><a class="menu__list__item" href="#production">производство</a></li>
+					<li><a class="menu__list__item" href="#clients">наши клиенты</a></li>
+					<li><a class="menu__list__item" href="#feedback">Отзывы</a></li>
+					<li><a class="menu__list__item" href="#feedback">Сертификаты</a></li>
+					<li><a class="menu__list__item" href="#contacts">контакты</a></li>
+					<li><a class="menu__list__item" href="#map">склад</a></li>
+				</ul>
+			</div>
+			<!-- /.menu-mobile -->
+		</div>
+		
+		<div class="menu-link">
+			<span></span>
+		</div>
+
+		<header class="header" id="about">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-4 col-md-4">
+						
+						<div class="header__logo"></div>
+					</div>
+					<!-- /.col -->
+					<div class="col-8 col-md-8">
+						<div class="header__contacts">
+							<div class="header__contacts__wrapper">
+								<div class="header__contacts__wrapper__phone">
+									8 (347) <span class="bold-phone">271-54-28</span>
+								</div>
+								<div class="header__contacts__wrapper__phone header__contacts__wrapper__phone-b">
+									8 (937) <span class="bold-phone">363-30-00</span>
+								</div>
+							</div>
+							<button class="call-btn modal-btn header-btn" onclick="yaCounter49908109.reachGoal('topBtn'); return true;">
+								<img src="img/phone.png" alt="call">
+								<span class="hidden-mobile">Заказать звонок</span>
+							</button>
+						</div>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</header>
+
+		<section class="main" id="main">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-0 col-lg-5">
+						<div class="main__img hidden-mobile box-animated main-box">
+							<img src="img/main/boxes.png" alt="boxes">
+						</div>
+					</div>
+					<!-- /.col-5 -->
+					<div class="col-12 col-lg-7">
+						<div class="main__text">
+							<div class="main-title">
+								<h1 class="main__text__title">Производство упаковки из гофрокартона</h1>
+								<h1 class="main__text__title">Производство упаковки из гофрокартона</h1>
+							</div>
+							<!-- /.main__text__title -->
+							<p class="main__text__subtitle">с доставкой по всей России</p>
+							<!-- /.main__text__subtitle -->
+							<div class="main__text__form">
+								<div class="main__text__form__title">
+									Получите индивидуальное предложение 
+									на производство и поставку гофропродукции
+									<span class="main__text__form__title__upper">
+										Образцы упаковки бесплатно!
+									</span>
+								</div>
+								<form action="mailer/smart.php" method="POST" class="main__form">
+									<input type="tel" placeholder="Введите номер телефона" name="user_phone">
+									<button type="submit" class="call-btn big-main-btn" onclick="yaCounter49908109.reachGoal('formSubmit'); return true;">Оставить заявку!</button>
+								</form>
+								<small class="form__small">*Минимальный заказ 500шт</small>
+							</div>
+							<!-- /.main__text__form -->
+						</div>
+						<!-- /.main__text -->
+					</div>
+					<!-- /.col-7 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.main -->
+
+		<!-- Слайдер -->
+		<script src="slick/slick.min.js"></script>
+		<script>
+			$('.main-box').slick({
+				arrows: false,
+				dots: true,
+				slidesToShow: 1,
+				SlidesToScroll: 1,
+				fade: true,
+				asNavFor: '.main-title'
+			});
+			$('.main-title').slick({
+				arrows: false,
+				slidesToShow: 1,
+				SlidesToScroll: 1,
+				fade: true,
+				asNavFor: '.main-box'
+			});
+		</script>
+
+		<div class="overlay">
+			<div class="popup">
+				<div class="popup__title">
+					Форма обратной связи
+				</div>
+				<!-- /.popup-title -->
+				<div class="popup__close">
+					&times;
+				</div>
+				<!-- /.popup-close -->
+				<div class="popup__form">
+					<form action="mailer/smart.php" method="POST" class="popup__form__main-form">
+						<div class="popup__form__main-form__header">
+							Получите индивидуальное предложение
+							<br><span>на производство и поставку изделий</span>
+						</div>
+						<label for="popup_phone" class="popup__form__main-form__label">
+							Введите ваш номер телефона:
+						</label>
+						<input type="tel" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ" class="popup__form__main-form__input" name="user_phone" id="popup_phone" required>
+						<button type="submit" class="call-btn popup__form__main-form__btn" onclick="yaCounter49908109.reachGoal('formSubmit'); return true;">Оставить заявку!</button>
+						<div class="popup__form__main-form__note">
+							*Минимальный заказ 500шт
+						</div>
+					</form>
+				</div>
+				<!-- /.popup-form -->
+			</div>
+			<!-- /.popup -->
+		</div>
+		<!-- /.overlay -->
+
+		<div class="features" id="features">
+			<div class="container">
+				<div class="numbers">
+					<div class="numbers-block">
+						<div class="numbers-block__title">5 лет</div>
+						<!-- /.numbers-block__title -->
+						<div class="number-block__text">На рынке изделий из гофрокартона</div>
+						<!-- /.number-block__text -->
+					</div>
+					<!-- /.numbers-block -->
+
+					<div class="numbers-block">
+						<div class="numbers-block__title">до 5 000 000 м<sup>2</sup></div>
+						<!-- /.numbers-block__title -->
+						<div class="number-block__text">Ежемесячный объем производства гофрокартона</div>
+						<!-- /.number-block__text -->
+					</div>
+					<!-- /.numbers-block -->
+
+					<div class="numbers-block">
+						<div class="numbers-block__title">4 000 м<sup>2</sup></div>
+						<!-- /.numbers-block__title -->
+						<div class="number-block__text">Площадь склада</div>
+						<!-- /.number-block__text -->
+
+					</div>
+					<!-- /.numbers-block -->
+				</div>
+				<!-- /.numbers -->
+				<div class="features-blocks">
+					<div class="features-block wow fadeInUp">
+						<div class="features-block__img">
+							<img src="img/features/1.png" alt="1">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Производство</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">4 технологические линии способны выполнить любой заказ любой сложности</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+
+					<div class="features-block wow fadeInUp" data-wow-delay="0.2s">
+						<div class="features-block__img">
+							<img src="img/features/2.png" alt="2">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Бесплатные образцы</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">Бесплатно делаем образцы гофроупаковки - это помогает заранее увидеть упаковку</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+
+					<div class="features-block wow fadeInUp" data-wow-delay="0.4s">
+						<div class="features-block__img">
+							<img src="img/features/3.png" alt="3">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Стабильное качество</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">Собственная лаборатория контролирует качество на каждом этапе производства</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+
+					<div class="features-block wow fadeInUp" data-wow-delay="0.6s">
+						<div class="features-block__img">
+							<img src="img/features/4.png" alt="4">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Страховой запас</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">Можем хранить запас гофропродукции на своих складах и поставлять его партиями</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+
+					<div class="features-block wow fadeInUp" data-wow-delay="0.8s">
+						<div class="features-block__img">
+							<img src="img/features/5.png" alt="5">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Флексопечать</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">Возможно нанесение вашего  логотипа, текста или манипуляционных знаков</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+
+					<div class="features-block wow fadeInUp" data-wow-delay="1s">
+						<div class="features-block__img">
+							<img src="img/features/6.png" alt="6">
+						</div>
+						<!-- /.features-block__img -->
+						<div class="features-block__text">
+							<div class="features-block__text__title">Гидрофобные добавки</div>
+							<!-- /.features-block__text__title -->
+							<div class="features-block__text__descr">На производстве реализована технология, которая позволяет гофрокартону стать прочнее</div>
+							<!-- /.features-block__text__descr -->
+						</div>
+						<!-- /.features-block__text -->
+					</div>
+					<!-- /.features-block -->
+					
+				</div>
+				<!-- /.feature-blocks -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.features -->
+
+		<section class="products" id="products">
+			<div class="container">
+				<h2 class="section-title">наша Продукция</h2>
+				<!-- /.section-title -->
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="products-block wow fadeInLeft">
+							<div class="products-block__img"><img src="img/products/1.png" alt="#"></div>
+							<!-- /.products-block__img -->
+							<div class="products-block__title">Гофрокороб 4-х клапанный</div>
+							<!-- /.products-block__title -->
+							<div class="products-block__buttons">
+								<button class="call-btn call-btn-o">Подробнее</button>
+								<button class="call-btn modal-btn">Получить расчет</button>
+							</div>
+							<!-- /.products-block__buttons -->
+						</div>
+						<!-- /.products-block -->
+					</div>
+					<!-- /.col-6 -->
+					<div class="col-12 col-md-6">
+						<div class="products-block wow fadeInRight">
+							<div class="products-block__img"><img src="img/products/2.png" alt="#"></div>
+							<!-- /.products-block__img -->
+							<div class="products-block__title">Гофролоток</div>
+							<!-- /.products-block__title -->
+							<div class="products-block__buttons">
+								<button class="call-btn call-btn-o">Подробнее</button>
+								<button class="call-btn modal-btn">Получить расчет</button>
+							</div>
+							<!-- /.products-block__buttons -->
+						</div>
+						<!-- /.products-block -->
+					</div>
+					<!-- /.col-6 -->
+					<div class="col-12 col-md-6">
+						<div class="products-block wow fadeInLeft">
+							<div class="products-block__img"><img src="img/products/3.png" alt="#"></div>
+							<!-- /.products-block__img -->
+							<div class="products-block__title">Гофрокороб самосборный (сложная высечка)</div>
+							<!-- /.products-block__title -->
+							<div class="products-block__buttons">
+								<button class="call-btn call-btn-o">Подробнее</button>
+								<button class="call-btn modal-btn">Получить расчет</button>
+							</div>
+							<!-- /.products-block__buttons -->
+						</div>
+						<!-- /.products-block -->
+					</div>
+					<!-- /.col-6 -->
+					<div class="col-12 col-md-6">
+						<div class="products-block wow fadeInRight">
+							<div class="products-block__img"><img src="img/products/4.png" alt="#"></div>
+							<!-- /.products-block__img -->
+							<div class="products-block__title">Листовой гофрокартон</div>
+							<!-- /.products-block__title -->
+							<div class="products-block__buttons">
+								<button class="call-btn call-btn-o">Подробнее</button>
+								<button class="call-btn modal-btn">Получить расчет</button>
+							</div>
+							<!-- /.products-block__buttons -->
+						</div>
+						<!-- /.products-block -->
+					</div>
+					<!-- /.col-6 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.products -->
+
+		<div class="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="contact__title">Получите индивидуальное предложение</div>
+						<div class="contact__subtitle">на производство и поставку изделий</div>
+						<form action="mailer/smart.php" method="POST" class="contact__form">
+							<p>Введите ваш номер телефона:</p>
+							<input type="tel" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ" class="contact__form__input" name="user_phone">
+							<button type="submit" class="call-btn contact__form__btn" onclick="yaCounter49908109.reachGoal('formSubmit'); return true;">Оставить заявку!</button>
+							<div class="contact__form__note">
+								*Минимальный заказ 500шт
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.contact -->
+
+		<div class="production" id="production">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-5 order-lg-2">
+						<div class="production-text">
+							<div class="production-text__title">Производство</div>
+							<div class="production-text__descr">
+								<div class="production-text__descr-part">Современное оборудование позволяет произ- водить до 5 миллионов квадратных метров гофрокартона ежемесячно. Гофрокороба и лотки производятся по ГОСТу или чертежам заказчика.</div>
+								<div class="production-text__descr-part">Досконально прорабатываем конструкции коро- бов и составы сырья, учитывая условия хранения, транспортировки и производства вашей продукции.</div>
+								<div class="production-text__descr-part">Возможно нанесение цветной флексопечати <span>на поверхность коробов.</span></div>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-5 -->
+					<div class="col-12 col-lg-7 order-lg-1">
+						<div class="production-slider_top">
+							<img src="img/production/1.jpg" alt="">
+							<img src="img/production/2.jpg" alt="">
+							<img src="img/production/1.jpg" alt="">
+							<img src="img/production/2.jpg" alt="">
+							<img src="img/production/1.jpg" alt="">
+							<img src="img/production/2.jpg" alt="">
+						</div>
+						<div class="production-slider_bottom">
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/1.jpg" alt="" class="prod-slide">
+							</div>
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/2.jpg" alt="" class="prod-slide">
+							</div>
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/1.jpg" alt="" class="prod-slide">
+							</div>
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/2.jpg" alt="" class="prod-slide">
+							</div>
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/1.jpg" alt="" class="prod-slide">
+							</div>
+							<div class="production-slider_bottom__wrapper">
+								<img src="img/production/2.jpg" alt="" class="prod-slide">
+							</div>
+						</div>
+					</div>
+					<!-- /.col-7 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.production -->
+
+		<section class="clients" id="clients">
+			<div class="container">
+				<h2 class="section-title">Наши клиенты</h2>
+				<!-- /.section-title -->
+				<div class="row">
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/1.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/2.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/3.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/4.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/5.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/6.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/7.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/8.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/9.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/10.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-l">
+						<div class="clients-box"><img src="img/clients/11.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+					<div class="col-6 col-md-4 col-lg-3 mob-clients-r">
+						<div class="clients-box"><img src="img/clients/12.png" alt="" class="clients-box__img"></div>
+						<!-- /.clients-box -->
+					</div>
+					<!-- /.col-6 col-md-4 col-lg-3 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.clients -->
+
+		<section class="feedback" id="feedback">
+			<div class="container">
+				<h2 class="section-title">
+					Отзывы о сотрудничестве
+				</h2>
+				<!-- /.section-title -->
+				<div class="feedback-slider">
+					<div class="feedback-slider__item"><img src="img/feedback/1.png" alt=""></div>
+					<div class="feedback-slider__item"><img src="img/feedback/2.png" alt=""></div>
+					<div class="feedback-slider__item"><img src="img/feedback/3.png" alt=""></div>
+					<div class="feedback-slider__item"><img src="img/feedback/1.png" alt=""></div>
+					<div class="feedback-slider__item"><img src="img/feedback/2.png" alt=""></div>
+				</div>
+				<!-- /.feedback-slider -->
+			</div>
+			<!-- /.conteiner -->
+		</section>
+		<!-- /.feedback -->
+
+		<section class="contacts">
+			<div class="map-wrapper">
+				<div id="map" class="map"></div>
+			</div>
+			<div class="contacts-block" id="contacts">
+				<div class="contacts-block__address">
+					<h2>контакты</h2>
+					<span class="contacts-block__title">Адрес офиса</span>
+					<span class="contacts-block__descr">г. Уфа, Проспект октября, 46</span>
+					<span class="contacts-block__title">Адрес склада</span>
+					<span class="contacts-block__descr">г. Уфа, ул. Майкопская, 65/2</span>
+				</div>
+				<div class="contacts-block__phone">
+					<span class="contacts-block__title">Тел. отдела продаж:</span>
+					<a class="contacts-block__descr" href="tel:+73472715428">
+						8 (347) 271-54-28 <br>
+					</a>
+					<a class="contacts-block__descr" href="tel:+79373633000">
+						8 (937) 363-30-00
+					</a>
+				</div>
+				<div class="contacts-block__cta">
+					<button class="call-btn modal-btn">Заказать звонок</button>
+				</div>
+				<div class="contacts-block__mail">
+					<span class="contacts-block__title">Е-mail</span>
+					<a href="mailto:urals.karton@gmail.com" class="contacts-block__descr">urals.karton@gmail.com</a>
+				</div>
+			</div>
+		</section>
+		<!-- /.contacts -->
+
+		<footer class="footer">
+			<p>© www.gofra-ural.ru 2016, все права защищены</p>
+		</footer>
+		<!-- /.footer -->
+
+
+		<link href="css/bootstrap-grid.min.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="slick/slick.css">
+		<link rel="stylesheet" href="slick/slick-theme.css">
+		<script src="slick/slick.min.js"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+		<title>Добрый картон</title>
+		<!-- Yandex.Metrika counter -->
+		<script>
+		    (function (d, w, c) {
+		        (w[c] = w[c] || []).push(function() {
+		            try {
+		                w.yaCounter49908109 = new Ya.Metrika2({
+		                    id:49908109,
+		                    clickmap:true,
+		                    trackLinks:true,
+		                    accurateTrackBounce:true,
+		                    webvisor:true
+		                });
+		            } catch(e) { }
+		        });
+
+		        var n = d.getElementsByTagName("script")[0],
+		            s = d.createElement("script"),
+		            f = function () { n.parentNode.insertBefore(s, n); };
+		        s.type = "text/javascript";
+		        s.async = true;
+		        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+		        if (w.opera == "[object Opera]") {
+		            d.addEventListener("DOMContentLoaded", f, false);
+		        } else { f(); }
+		    })(document, window, "yandex_metrika_callbacks2");
+		</script>
+		<!-- /Yandex.Metrika counter -->
+		
+
+		<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+
+		<!-- Мобильное меню -->
+		<script>
+			$(document).ready(function(){
+				let link = $('.menu-link'),
+						menu = $('.menu-mobile'),
+						menu_item = $('.menu__list__item');
+				link.click(function(){
+					link.toggleClass('menu-link-active');
+					menu.toggleClass('menu-mobile-active');
+				}),
+				menu_item.click(function(){
+					link.removeClass('menu-link-active');
+					menu.removeClass('menu-mobile-active');
+				});
+			});
+		</script>
+
+		<!-- Почта -->
+		<script>
+			$('form').submit(function(event) {
+				event.preventDefault();
+				if ($('.overlay').css("display", "block"))
+					$(".overlay").css("display", "none");
+				$.ajax({
+					type: "POST",
+					url: "mailer/smart.php",
+					data: $(this).serialize()
+					}).done(function() {
+						$(this).find("input").val("");
+						alert("Заявка успешно подана");
+						$("form").trigger("reset");
+					});
+					return false;
+			});
+		</script>
+		
+		<script src="js/jquery.maskedinput.min.js"></script>
+		<script>
+			jQuery(function($){
+			  $("input").mask("(999) 999-9999");
+			});
+		</script>
+
+		<script src="js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+		
+		
+
+		<!-- Показ и скрытие модального окна -->
+		<script>
+			$(document).ready(function(){
+				$('.modal-btn').on("click", function(){
+					$('.overlay').show();
+				});
+				$('.popup__close').on("click", function(){
+					$('.overlay').hide();
+				});
+			});
+		</script>
+
+		
+
+		<!-- Карта -->
+		<script>
+			ymaps.ready(function () {
+			    var myMap = new ymaps.Map('map', {
+			            center: [54.752656, 56.002053],
+			            zoom: 17
+			        }, {
+			            searchControlProvider: 'yandex#search'
+			        }),
+
+			        // Создаём макет содержимого.
+			        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			        ),
+
+			        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+			            hintContent: 'Добрый картон',
+			            balloonContent: 'Мы ждём вас'
+			        }, {
+			            // Опции.
+			            // Необходимо указать данный тип макета.
+			            iconLayout: 'default#image',
+			            // Своё изображение иконки метки.
+			            iconImageHref: 'img/map-mark.png',
+			            // Размеры метки.
+			            iconImageSize: [64, 64],
+			            // Смещение левого верхнего угла иконки относительно
+			            // её "ножки" (точки привязки).
+			            iconImageOffset: [-32, -64]
+			        });
+
+			    myMap.geoObjects
+			        .add(myPlacemark);
+			    myMap.behaviors.disable('scrollZoom');
+			});
+		</script>
+
+		
+		<!-- Скролл при навигации -->
+		<script>
+		    $('a[href^="#"]').click(function (){
+		        var target = $(this).attr('href');
+		    $('html, body').animate({scrollTop: $(target).offset().top - 50 }, 1200);
+		        return false;
+		    });
+		</script>
+
+		<!-- Слайдер -->
+		<script>
+			$('.production-slider_top').slick({
+				arrows: false,
+				slidesToShow: 1,
+				SlidesToScroll: 1,
+				asNavFor: '.production-slider_bottom',
+				responsive: [
+			    {
+			      breakpoint: 576,
+			      settings: {
+			        arrows: true,
+			        prevArrow: '<div class="slider-arrow slider-arrow_mobile slider-arrow_left"></div>',
+			        nextArrow: '<div class="slider-arrow slider-arrow_mobile slider-arrow_right"></div>'
+			      }
+			    }
+			  ]
+			});
+			$('.production-slider_bottom').slick({
+				arrows: true,
+				prevArrow: '<div class="slider-arrow slider-arrow_prod slider-arrow_left"></div>',
+				nextArrow: '<div class="slider-arrow slider-arrow_prod slider-arrow_right"></div>',
+				slidesToShow: 4,
+				SlidesToScroll: 1,
+				asNavFor: '.production-slider_top',
+
+			});
+			$('.feedback-slider').slick({
+				slidesToShow: 3,
+				SlidesToScroll: 1,
+				prevArrow: '<div class="slider-arrow slider-arrow_feed slider-arrow_left"></div>',
+				nextArrow: '<div class="slider-arrow slider-arrow_feed slider-arrow_right"></div>',
+				responsive: [
+			    {
+			      breakpoint: 992,
+			      settings: {
+			        slidesToShow: 2,
+			      }
+			    },
+			    {
+			      breakpoint: 768,
+			      settings: {
+			        slidesToShow: 1,
+			      }
+			    }
+			  ]
+			});
+		</script>
+	</body>
+</html>

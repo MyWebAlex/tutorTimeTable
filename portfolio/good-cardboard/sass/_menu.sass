@@ -1,0 +1,113 @@
+.menu-big 
+	background-color: $text-c-d
+	padding-top: 17px
+	padding-bottom: 16px
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 1000
+	.menu__list
+		margin-top: 0
+		margin-bottom: 0
+		display: flex 
+		flex-direction: row
+		justify-content: space-between
+		list-style: none
+		padding-left: 0
+		&__item 
+			font-size: 12px
+			font-weight: 400
+			line-height: 22px
+			text-transform: uppercase
+			border-right: 1px dotted white
+			padding-right: 15px
+			text-align: center
+			&-last 
+				padding-right: 0
+				border-right: none
+			a 
+				text-decoration: none
+				color: #fff
+.header__logo 
+	margin-left: 30px
+
+.menu-link
+	display: block
+	position: fixed
+	top: 38px
+	left: 15px
+	width: 23px
+	height: 17px
+	z-index: 10001
+	span
+		display: block
+		position: absolute
+		height: 3px
+		width: 22px
+		background-color: #000
+		z-index: 15
+		&::before 
+			content: ''
+			margin-top: -8px
+			display: block
+			position: absolute
+			height: 3px
+			width: 22px
+			background-color: #000
+			transition: all 0.2s
+		&::after 
+			content: ''
+			margin-top: 8px
+			display: block
+			position: absolute
+			height: 3px
+			width: 22px
+			background-color: #000
+			transition: all 0.2s
+	&-active 
+		span 
+			background-color: transparent
+			&:before 
+				transform: rotate(135deg)
+				margin-top: 0
+			&:after 
+				transform: rotate(-135deg)
+				margin-top: 0
+.menu-mobile 
+	position: fixed
+	top: 0
+	left: -100%
+	background-color: rgba(255, 157, 0, 0.8)
+	z-index: 10000
+	height: 100%
+	width: 100%
+	transition: all 0.2s
+	ul 
+		list-style: none
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		padding-left: 0
+		height: 100%
+		width: 100%
+		li 
+			text-align: center
+			display: block
+			width: 100%
+			text-transform: uppercase
+			line-height: 35px
+			a 
+				display: block
+				width: 100%
+				text-decoration: none
+				color: #fff
+				font-weight: 500
+				letter-spacing: 3px
+				&:hover 
+					background-color: rgba(255, 255, 255, 0.9)
+					color: #000
+					transition: all 0.2s
+	&-active 
+		left: 0

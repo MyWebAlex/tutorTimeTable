@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Буст от гуру</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="css/nouislider.min.css">
+	<script src="js/nouislider.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+</head>
+<body>
+	<main class="main">
+		<form class="price-form" action="#">
+			<div class="calc-section calc ">
+				<div class="calc__space1"></div>
+
+				<div id="slider" class="slider"></div>
+
+				<div class="calc__space2"></div>
+			
+				<div class="mmr-counter">
+					<div class="mmr-counter__wrapper">
+						<span class="mmr-counter__word">Текучий ммр</span>
+						<input type="text" id="mmr-before" class="mmr-counter__input mmr-counter__input_blue" placeholder="0" value="" max="5900" maxlength="4">
+					</div>
+					<div class="mmr-counter__arrows"></div>
+					<div class="mmr-counter__wrapper">
+						<span class="mmr-counter__word">Будучий ммр</span>
+						<input type="text" id="mmr-after" class="mmr-counter__input mmr-counter__input_orange" placeholder="3000" value="" max="6000" maxlength="4">
+					</div>
+				</div>
+
+				<div class="calc-bottom">
+					<div class="calc-left">
+						<div class="calc__space3"></div>
+						<div class="check">
+							<input id="calc-check1" type="checkbox" class="check__box">
+							<label for="calc-check1" class="check__label">Сделать заказ быстрее +15%</label>
+						</div>
+						
+						<div class="check__space"></div>
+					
+						<div class="check check-guard">
+							<input id="calc-check2" type="checkbox" class="check__box">
+							<label for="calc-check2" class="check__label">Не отключать Steam Guard + 10%</label>
+						</div>
+					
+						<div class="check__space"></div>
+					
+						<div class="check">
+							<input id="calc-check3" type="checkbox" class="check__box">
+							<label for="calc-check3" class="check__label">Не играть в определенное время +15%</label>
+						</div>
+					
+						<div class="check__space"></div>
+					
+						<div class="check">
+							<input id="calc-check4" type="checkbox" class="check__box">
+							<label for="calc-check4" class="check__label">Играть пати рейтинг + 30%</label>
+						</div>
+						<div class="check__space"></div>
+						<div class="check__space"></div>
+					
+						<input type="text" id="discount-coupon" class="calc-discount" placeholder="код скидочного купона">
+					</div>
+					
+					<div class="calc-right">
+						<div class="price">
+							<p class="price__number">₽<span> </span><span id="price">7080</span></p>
+							<p class="price__time"><img src="img/calc/clocks.png" alt=""><span>≈<span id="timeA">13</span>-<span id="timeB">16</span> дн.</span></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="btn-next_first__wrapper">
+					<div class="btn-next btn-next_first">
+						<div class="btn-next_first__img"><img src="img/calc/ready.png" alt=""></div><span
+							class="btn-next_first__text">ПОДГОТОВИТЬ АККАУНТ</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="calc-section steam hide">
+				<div class="steam-title">
+					<div>
+						<img src="img/steam/mobile.png" alt="">
+						<span>Мобильный аутентификатор</span>
+					</div>
+				</div>
+				<div class="steam-descr">
+					<div class="steam-descr__left">
+						Если Вы используете мобильный
+						аутентификатор, его необходимо удалить,
+						а после — отключить Steam Guard.
+					</div>
+					<div class="steam-descr__right">
+						<img src="/img/steam/mobile.jpg" alt="">
+					</div>
+				</div>
+
+				<div class="steam-title">
+					<div>
+						<img src="img/steam/guard.png" alt="">
+						<span>Steam Guard</span>
+					</div>
+				</div>
+				<div class="steam-descr">
+					<div class="steam-descr__left">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<img class="swiper-slide" src="img/steam/guard1.jpg"></img>
+								<img class="swiper-slide" src="img/steam/guard1.jpg"></img>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+					<div class="steam-descr__right">
+						Steam Guard - функция, которая защищает Ваш
+						аккаунт от доступа с других устройств, но так как
+						бустеры должны иметь моментальный доступ к
+						Вашему аккаунту (чтобыкак можно быстрее
+						приступить к работе), следует отключить.
+						<br> <br>
+						<div class="btn-no-guard"><span><svg id="SVGDoc" width="9" height="24" xmlns="http://www.w3.org/2000/svg"	version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:avocode="https://avocode.com/"	viewBox="0 0 9 24">
+							<defs>
+								<path d="M962.47009,1861.34689h-5.85972v4.75217h5.85972zM963.32256,1848.06846v-6.16759h-7.72499v6.16759l1.21662,11.32395h5.29175z" id="Path-0" />
+							</defs>
+							<g transform="matrix(1,0,0,1,-955,-1842)">
+								<g><use xlink:href="#Path-0" fill="#ffffff" fill-opacity="1" /></g>
+							</g>
+						</svg></span>
+						Не отключать Steam Guard</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="calc-section family-share hide">
+				<div class="steam-title">
+					<div>
+						<img src="img/steam/family-share.png" alt="">
+						<span>Мобильный аутентификатор</span>
+					</div>
+				</div>
+				<div class="steam-descr">
+					<div class="steam-descr__left">
+						<img src="/img/steam/video.jpg" alt="">
+					</div>
+					<div class="steam-descr__right">
+						Family view - функция, позволяющая ограничить
+						доступ наших бустеров к вашему аккаунту(шоб
+						не лазали куда не нада) и ВЫ не беспокоились о
+						его безопасности.
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="calc-section payment hide">
+				<div class="steam-title steam-title_payment">
+					<div>
+						<img src="img/steam/payment.png" alt="">
+						<span>Оплата</span>
+					</div>
+					
+				</div>
+				<p class="payment__descr">
+					Вам остаётся только оплатить заказ и мы сразу же примемся за работу!
+Чтобы оплатить заказ, вам потребуется выбрать удобный для вас способ оплаты,после чего
+скопируйте  номер счёта и нажмите «оплатить», далее вас перенесёт на выбранный для оплаты 
+сайт, где вы  должны оплатить ваш заказ, а в комментариях к платежу пропишите свой
+логин от Steam’а
+				</p>
+				<div class="payment-methods">
+					<div class="payment-methods__bg">
+						<table class="payment-methods__table">
+							<tr>
+								<td class="payment-methods__table_td1"><img src="img/steam/qiwi.png" alt=""></td>
+								<td class="payment-methods__table_td2">Qiwi</td>
+								<td class="payment-methods__table_td3">+79523946055</td>
+							</tr>
+							<tr>
+								<td class="payment-methods__table_td1"><img src="img/steam/wm.png" alt=""></td>
+								<td class="payment-methods__table_td2">WebMoney</td>
+								<td class="payment-methods__table_td3">410018431124441</td>
+							</tr>
+							<tr>
+								<td class="payment-methods__table_td1"><img src="img/steam/ym.png" alt=""></td>
+								<td class="payment-methods__table_td2">Яндекс Деньги </td>
+								<td class="payment-methods__table_td3">R906699101800</td>
+							</tr>
+							<tr>
+								<td class="payment-methods__table_td1"><img src="img/steam/sb.png" alt=""></td>
+								<td class="payment-methods__table_td2">Cбербанк</td>
+								<td class="payment-methods__table_td3">5469550041207751</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+
+			<div class="nav-btns hide">
+				<div class="btn btn_prev">НАЗАД <img src="img/calc/btn-prev.png" alt=""></div>
+				<div class="btn btn_next">ДЕЛО СДЕЛАНО <img src="img/calc/btn-next.png" alt=""></div>
+			</div>
+		</form>
+	</main>
+
+	<script>
+		function show(page) {
+			switch (page) {
+				case 'calc':
+					$('.calc').removeClass('hide');
+					$('.steam').addClass('hide');
+					$('.family-share').addClass('hide');
+					$('.nav-btns').addClass('hide');
+					$('.nav-btns').removeClass('nav-btns_steam');
+					$('.nav-btns').removeClass('nav-btns_family-share');
+					break;
+				case 'steam':
+					$('.calc').addClass('hide');
+					$('.steam').removeClass('hide');
+					$('.family-share').addClass('hide');
+					$('.nav-btns').removeClass('hide');
+					$('.nav-btns').addClass('nav-btns_steam');
+					$('.nav-btns').removeClass('nav-btns_family-share');
+					break;
+				case 'family-share':
+					$('.calc').addClass('hide');
+					$('.steam').addClass('hide');
+					$('.family-share').removeClass('hide');
+					$('.nav-btns').removeClass('hide');
+					$('.nav-btns').removeClass('nav-btns_steam');
+					$('.nav-btns').addClass('nav-btns_family-share');
+					break;
+				default:
+					alert();
+					break;
+			}
+		};
+		$(document).ready(function () {
+			var mySwiper = new Swiper('.swiper-container', {
+				loop: true,
+				slidesPerView: 1,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true
+				},
+				autoplay: {
+					delay: 2000,
+				},
+			})
+		});
+		var slider = document.getElementById('slider');
+		noUiSlider.create(slider, {
+			start: [0, 3000],
+			connect: true,
+			range: {
+				'min': 0,
+				'max': 6000
+			},
+			step: 1,
+			// tooltips: true,
+			margin: 100,
+			pips: {
+				mode: 'values',
+				values: [0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000],
+				density: 4,
+				stepped: true
+			}
+		});
+		
+		var mod = 0;
+		
+		function sliderGet(x) {
+			return Math.round(slider.noUiSlider.get()[x]);
+		}
+		function sliderSet(x, y) {
+				if (x == 0) {
+					slider.noUiSlider.set([y, this.value]);
+				} else {
+					slider.noUiSlider.set([this.value, y]);
+				}
+			}
+		
+		function priceRefresh() {
+				var mmrB = parseInt($('#mmr-before').val()),
+						mmrA = parseInt($('#mmr-after').val());
+						check1 = $('#calc-check1').is(":checked"),
+						check2 = $('#calc-check2').is(":checked"),
+						check3 = $('#calc-check3').is(":checked"),
+						check4 = $('#calc-check4').is(":checked"),
+						diff = (mmrA - mmrB) / 25,
+						time = [0, 0],
+						tDiff = diff - 4,
+						startPrice = 0,
+						finalPrice = 0,
+						subB = Math.round(mmrB / 25),
+						subA = Math.round(mmrA / 25);
+				function changePrice(x) {
+					finalPrice += Math.round(startPrice * x);
+				}
+
+				mod = $('#mmr-before').val() % 25;
+				if ((mmrA - mmrB) % 25 != 0) {
+					$('#mmr-after').val(mmrA - (mmrA % 25) + mod);
+				}
+
+				for (var i = subB; i <= subA; i++) {
+					switch(i) {
+						case 1: startPrice += 45; break;
+						case 2: startPrice += 45; break;
+						case 3: startPrice += 45; break;
+						case 4: startPrice += 45; break;
+						case 5: startPrice += 45; break;
+						case 6: startPrice += 45; break;
+						case 7: startPrice += 45; break;
+						case 8: startPrice += 45; break;
+						case 9: startPrice += 45; break;
+						case 10: startPrice += 45; break;
+						case 11: startPrice += 45; break;
+						case 12: startPrice += 45; break;
+						case 13: startPrice += 45; break;
+						case 14: startPrice += 45; break;
+						case 15: startPrice += 45; break;
+						case 16: startPrice += 45; break;
+						case 17: startPrice += 45; break;
+						case 18: startPrice += 45; break;
+						case 19: startPrice += 45; break;
+						case 20: startPrice += 45; break;
+						case 21: startPrice += 45; break;
+						case 22: startPrice += 45; break;
+						case 23: startPrice += 45; break;
+						case 24: startPrice += 45; break;
+						case 25: startPrice += 45; break;
+						case 26: startPrice += 45; break;
+						case 27: startPrice += 45; break;
+						case 28: startPrice += 45; break;
+						case 29: startPrice += 45; break;
+						case 30: startPrice += 45; break;
+						case 31: startPrice += 45; break;
+						case 32: startPrice += 45; break;
+						case 33: startPrice += 45; break;
+						case 34: startPrice += 45; break;
+						case 35: startPrice += 45; break;
+						case 36: startPrice += 45; break;
+						case 37: startPrice += 45; break;
+						case 38: startPrice += 45; break;
+						case 39: startPrice += 45; break;
+						case 40: startPrice += 45; break;
+						case 41: startPrice += 45; break;
+						case 42: startPrice += 45; break;
+						case 43: startPrice += 45; break;
+						case 44: startPrice += 45; break;
+						case 45: startPrice += 45; break;
+						case 46: startPrice += 45; break;
+						case 47: startPrice += 45; break;
+						case 48: startPrice += 45; break;
+						case 49: startPrice += 45; break;
+						case 50: startPrice += 45; break;
+						case 51: startPrice += 45; break;
+						case 52: startPrice += 45; break;
+						case 53: startPrice += 45; break;
+						case 54: startPrice += 45; break;
+						case 55: startPrice += 45; break;
+						case 56: startPrice += 45; break;
+						case 57: startPrice += 45; break;
+						case 58: startPrice += 45; break;
+						case 59: startPrice += 45; break;
+						case 60: startPrice += 45; break;
+						case 61: startPrice += 52; break;
+						case 62: startPrice += 52; break;
+						case 63: startPrice += 52; break;
+						case 64: startPrice += 52; break;
+						case 65: startPrice += 52; break;
+						case 66: startPrice += 52; break;
+						case 67: startPrice += 52; break;
+						case 68: startPrice += 52; break;
+						case 69: startPrice += 52; break;
+						case 70: startPrice += 52; break;
+						case 71: startPrice += 52; break;
+						case 72: startPrice += 52; break;
+						case 73: startPrice += 52; break;
+						case 74: startPrice += 52; break;
+						case 75: startPrice += 52; break;
+						case 76: startPrice += 52; break;
+						case 77: startPrice += 52; break;
+						case 78: startPrice += 52; break;
+						case 79: startPrice += 52; break;
+						case 80: startPrice += 54; break;
+						case 81: startPrice += 54; break;
+						case 82: startPrice += 54; break;
+						case 83: startPrice += 54; break;
+						case 84: startPrice += 54; break;
+						case 85: startPrice += 54; break;
+						case 86: startPrice += 54; break;
+						case 87: startPrice += 54; break;
+						case 88: startPrice += 54; break;
+						case 89: startPrice += 54; break;
+						case 90: startPrice += 54; break;
+						case 91: startPrice += 54; break;
+						case 92: startPrice += 54; break;
+						case 93: startPrice += 54; break;
+						case 94: startPrice += 54; break;
+						case 95: startPrice += 54; break;
+						case 96: startPrice += 54; break;
+						case 97: startPrice += 54; break;
+						case 98: startPrice += 54; break;
+						case 99: startPrice += 54; break;
+						case 100: startPrice += 54; break;
+						case 101: startPrice += 62; break;
+						case 102: startPrice += 62; break;
+						case 103: startPrice += 62; break;
+						case 104: startPrice += 62; break;
+						case 105: startPrice += 62; break;
+						case 106: startPrice += 62; break;
+						case 107: startPrice += 62; break;
+						case 108: startPrice += 62; break;
+						case 109: startPrice += 62; break;
+						case 110: startPrice += 62; break;
+						case 111: startPrice += 62; break;
+						case 112: startPrice += 62; break;
+						case 113: startPrice += 62; break;
+						case 114: startPrice += 62; break;
+						case 115: startPrice += 62; break;
+						case 116: startPrice += 62; break;
+						case 117: startPrice += 62; break;
+						case 118: startPrice += 62; break;
+						case 119: startPrice += 62; break;
+						case 120: startPrice += 62; break;
+						case 121: startPrice += 65; break;
+						case 122: startPrice += 65; break;
+						case 123: startPrice += 65; break;
+						case 124: startPrice += 65; break;
+						case 125: startPrice += 65; break;
+						case 126: startPrice += 65; break;
+						case 127: startPrice += 65; break;
+						case 128: startPrice += 65; break;
+						case 129: startPrice += 65; break;
+						case 130: startPrice += 65; break;
+						case 131: startPrice += 65; break;
+						case 132: startPrice += 65; break;
+						case 133: startPrice += 65; break;
+						case 134: startPrice += 65; break;
+						case 135: startPrice += 65; break;
+						case 136: startPrice += 65; break;
+						case 137: startPrice += 65; break;
+						case 138: startPrice += 65; break;
+						case 139: startPrice += 65; break;
+						case 140: startPrice += 65; break;
+						case 141: startPrice += 85; break;
+						case 142: startPrice += 85; break;
+						case 143: startPrice += 85; break;
+						case 144: startPrice += 85; break;
+						case 145: startPrice += 85; break;
+						case 146: startPrice += 85; break;
+						case 147: startPrice += 85; break;
+						case 148: startPrice += 85; break;
+						case 149: startPrice += 85; break;
+						case 150: startPrice += 85; break;
+						case 151: startPrice += 85; break;
+						case 152: startPrice += 85; break;
+						case 153: startPrice += 85; break;
+						case 154: startPrice += 85; break;
+						case 155: startPrice += 85; break;
+						case 156: startPrice += 85; break;
+						case 157: startPrice += 85; break;
+						case 158: startPrice += 85; break;
+						case 159: startPrice += 85; break;
+						case 160: startPrice += 85; break;
+						case 161: startPrice += 104; break;
+						case 162: startPrice += 104; break;
+						case 163: startPrice += 104; break;
+						case 164: startPrice += 104; break;
+						case 165: startPrice += 104; break;
+						case 166: startPrice += 104; break;
+						case 167: startPrice += 104; break;
+						case 168: startPrice += 104; break;
+						case 169: startPrice += 104; break;
+						case 170: startPrice += 104; break;
+						case 171: startPrice += 104; break;
+						case 172: startPrice += 104; break;
+						case 173: startPrice += 104; break;
+						case 174: startPrice += 104; break;
+						case 175: startPrice += 104; break;
+						case 176: startPrice += 104; break;
+						case 177: startPrice += 104; break;
+						case 178: startPrice += 104; break;
+						case 179: startPrice += 104; break;
+						case 180: startPrice += 104; break;
+						case 181: startPrice += 123; break;
+						case 182: startPrice += 123; break;
+						case 183: startPrice += 123; break;
+						case 184: startPrice += 123; break;
+						case 185: startPrice += 127; break;
+						case 186: startPrice += 127; break;
+						case 187: startPrice += 127; break;
+						case 188: startPrice += 127; break;
+						case 189: startPrice += 127; break;
+						case 190: startPrice += 127; break;
+						case 191: startPrice += 127; break;
+						case 192: startPrice += 127; break;
+						case 193: startPrice += 130; break;
+						case 194: startPrice += 130; break;
+						case 195: startPrice += 130; break;
+						case 196: startPrice += 130; break;
+						case 197: startPrice += 153; break;
+						case 198: startPrice += 153; break;
+						case 199: startPrice += 153; break;
+						case 200: startPrice += 153; break;
+						case 201: startPrice += 180; break;
+						case 202: startPrice += 180; break;
+						case 203: startPrice += 180; break;
+						case 204: startPrice += 180; break;
+						case 205: startPrice += 208; break;
+						case 206: startPrice += 208; break;
+						case 207: startPrice += 208; break;
+						case 208: startPrice += 208; break;
+						case 209: startPrice += 235; break;
+						case 210: startPrice += 235; break;
+						case 211: startPrice += 235; break;
+						case 212: startPrice += 235; break;
+						case 213: startPrice += 264; break;
+						case 214: startPrice += 264; break;
+						case 215: startPrice += 264; break;
+						case 216: startPrice += 264; break;
+						case 217: startPrice += 322; break;
+						case 218: startPrice += 322; break;
+						case 219: startPrice += 322; break;
+						case 220: startPrice += 322; break;
+						case 221: startPrice += 424; break;
+						case 222: startPrice += 424; break;
+						case 223: startPrice += 424; break;
+						case 224: startPrice += 424; break;
+						case 225: startPrice += 433; break;
+						case 226: startPrice += 433; break;
+						case 227: startPrice += 433; break;
+						case 228: startPrice += 433; break;
+						case 229: startPrice += 440; break;
+						case 230: startPrice += 440; break;
+						case 231: startPrice += 440; break;
+						case 232: startPrice += 440; break;
+						case 233: startPrice += 450; break;
+						case 234: startPrice += 450; break;
+						case 235: startPrice += 450; break;
+						case 236: startPrice += 450; break;
+						case 237: startPrice += 500; break;
+						case 238: startPrice += 500; break;
+						case 239: startPrice += 500; break;
+						case 240: startPrice += 500; break;
+					}
+				}
+				finalPrice = startPrice;
+				
+				if (mmrA <= 4100) {
+					time = [0, 2];
+					while (tDiff > 0) {
+						time[0] += 1;
+						time[1] += 1;
+						tDiff -= 9;
+					}
+				} else if (mmrA <= 4600) {
+					time = [0, 2];
+					while (tDiff > 0) {
+						time[0] += 1;
+						time[1] += 1;
+						tDiff -= 8;
+					}
+				} else if (mmrA <= 5000) {
+					time = [0, 2];
+					while (tDiff > 0) {
+						time[0] += 1;
+						time[1] += 1;
+						tDiff -= 7;
+					}
+				} else if (mmrA <= 5500) {
+					time = [0, 2];
+					while (tDiff > 0) {
+						time[0] += 1;
+						time[1] += 1;
+						tDiff -= 6;
+					}
+				} else {
+					time = [1, 4];
+					while (tDiff > 0) {
+						time[0] += 1;
+						time[1] += 1;
+						tDiff -= 5;
+					}
+				}
+				if (check1) {
+					changePrice(0.15)
+				}
+				if (check2) {
+					changePrice(0.1)
+				}
+				if (check3) {
+					changePrice(0.15)
+				}
+				if (check4) {
+					changePrice(0.3)
+				}
+				if ($('#discount-coupon').val() == "darksarutop") {
+					finalPrice -= Math.round(startPrice * 0.07);
+					$('#discount-coupon').attr('disabled','');
+					$('#discount-coupon').css('background-color',"green")
+					$('#discount-coupon').css('color',"#fff")
+				}
+				$('#price').text(finalPrice);
+				$('#timeA').text(time[0]);
+				$('#timeB').text(time[1]);
+			}
+
+		$(window).on('load', function () {
+
+			slider.noUiSlider.on('update', function () {
+				$('#mmr-before').val(sliderGet(0));
+				$('#mmr-after').val(sliderGet(1));
+				priceRefresh();
+			});
+
+			$('#mmr-before').on('input', function() {
+				sliderSet(0, $('#mmr-before').val());
+			});
+			$('#mmr-after').on('change', function () {
+				sliderSet(1, $('#mmr-after').val());
+			});
+
+			$('input').on('change', function() {
+				priceRefresh();
+			});
+
+			// $('.mmr-counter__input').on('click', function() {
+			// 	$(this).find('.mmr-counter__input');
+			// 	$(this).val('');
+			// 	$(document).mouseup(function (e) { // событие клика по веб-документу
+			// 		var div = $($('.mmr-counter__input')); // тут указываем ID элемента
+			// 		if (!div.is(e.target) // если клик был не по нашему блоку
+			// 			&& div.has(e.target).length === 0) {
+			// 				console.log("here");
+			// 		}
+			// 	});
+			// });
+			$('.check-guard').on('change', function() {
+				$('.check-guard').removeClass('animated');
+				$('.check-guard').removeClass('pulse');
+			});
+			$('.btn-next_first').on('click', function () {
+				if ($('#calc-check2').prop('checked')) {
+					show('family-share');
+				} else {
+					show('steam');
+				}
+				$('.check-guard').removeClass('pulse');
+				$('.check-guard').removeClass('animated');
+			});
+			$('.btn_prev').on('click', function () {
+				if ($('.nav-btns').hasClass('nav-btns_steam')) {
+					show('calc');
+				} else if ($('.nav-btns').hasClass('nav-btns_family-share')) {
+					if ($('#calc-check2').prop('checked')) {
+						show('calc');
+					} else {
+						show('steam');
+					}
+				}
+			});
+			$('.btn_next').on('click', function () {
+				if ($('.nav-btns').hasClass('nav-btns_steam')) {
+					show('family-share');
+				} else if ($('.nav-btns').hasClass('nav-btns_family-share')) {
+					show('family-share');
+				}
+			});
+			$('.btn-no-guard').on('click', function () {
+				show('calc');
+				$('.check-guard').addClass('animated');
+				$('.check-guard').addClass('pulse');
+			});
+			
+		});
+	</script>
+</body>
+</html>

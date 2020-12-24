@@ -1,0 +1,161 @@
+* {
+  transition: all 0.2s ease-in-out;
+  font-family: sans-serif;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+  .pop-modifier {
+    display: none;
+    height: 200px;
+    width: 150px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 255, 13);
+    box-shadow: 0 0 5px;
+    #entry__delete__btn {
+      cursor: pointer;
+    }
+    #entry__price__input {
+      width: 100px;
+    }
+  }
+  .timetable  {
+    display: grid;
+    grid-template-rows: repeat(10, 10%);
+    grid-template-columns: 0.7fr repeat(7, 1fr);
+    border: #000 solid 1px;
+    .time {
+      border: #000 solid 1px;
+      ul {
+        width: 96%;
+        height: 96%;
+        list-style: none;
+        overflow-y: scroll;
+        li {
+          width: 100%;
+          cursor: pointer;
+          &:hover {
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+  .students {
+    display: grid;
+    // height: 100%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    row-gap: 5px;
+    .student__new {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 100px;
+      background: linear-gradient(to top right, #3EC97A, #69EA49 80%, #fff 100%);
+      border-radius: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      &:hover {
+        background: linear-gradient(to top right, #34af69, #69EA49 80%, #fff 100%);
+      }
+    }
+    .student {
+      overflow: hidden;
+      display: grid;
+      height: 40px;
+      font-size: 20px;
+      justify-items: center;
+      align-items: center;
+      background: linear-gradient(to top right, #3EC97A, #69EA49 80%, #fff 100%);
+      border-radius: 10px;
+      user-select: none;
+
+      .student__header {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-rows: repeat(2, 20px);
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:  "name name name name info"
+                              "name name name name info";
+        .student__name { grid-area: name; }
+        .student__info { grid-area: info; }
+      }
+      .student__settings {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-rows: repeat(4, 50px);
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:  "name-label name-changer"
+                              "phone-label phone-changer"
+                              "cours-label cours-changer"
+                              "more-label more-changer";
+      }
+      
+      &:hover {
+        background: linear-gradient(to top right, #34af69, #69EA49 80%, #fff 100%);
+      }
+      .student__name { grid-area: name; }
+      .student__phone { grid-area: phone; }
+      .student__cours { grid-area: cours; }
+      .student__social { grid-area: social; }
+      .student__more { grid-area: more; }
+      .changer {
+        height: 20px;
+        width: 250px;
+      }
+      .label {
+        font-size: 20px;
+      }
+      .student__name-label { grid-area: name-label; }
+      .student__phone-label { grid-area: phone-label; }
+      .student__cours-label { grid-area: cours-label; }
+      .student__more-label { grid-area: more-label; }
+      .student__name-changer { grid-area: name-changer; }
+      .student__phone-changer { grid-area: phone-changer; }
+      .student__cours-changer { grid-area: cours-changer; }
+      .student__more-changer { grid-area: more-changer; }
+    }
+    .student_more {
+      height: 300px;
+      
+      // grid-template-rows: repeat(2, 50px) repeat(4, 1fr);
+      .student__name-label { grid-area: name-label; }
+      .student__phone-label { grid-area: phone-label; }
+      .student__cours-label { grid-area: cours-label; }
+      .student__more-label { grid-area: more-label; }
+      .student__name-changer { grid-area: name-changer; }
+      .student__phone-changer { grid-area: phone-changer; }
+      .student__cours-changer { grid-area: cours-changer; }
+      .student__more-changer { grid-area: more-changer; }
+    }
+  }
+}
+
+.hide {
+  opacity: 0;
+  height: 0;
+  width: 0;
+} 
+
+.hovered {
+  background-color: rgb(255, 0, 0);;
+}

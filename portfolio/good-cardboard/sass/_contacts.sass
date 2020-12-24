@@ -1,0 +1,90 @@
+.contacts 
+	position: relative
+	h2 
+		display: none
+	a 
+		text-decoration: none
+		color: #000
+	&-block 
+		position: absolute
+		top: 10%
+		left: 10%
+		background-color: #fff
+		padding: 33px 34px 39px 34px
+		height: 390px
+		width: 313px
+		line-height: 20px
+		&__title 
+			display: block
+			font-size: 18px
+			font-weight: 700
+			margin-top: 10px
+			margin-bottom: 6px
+		&__address
+			margin-bottom: 31px
+		&__phone 
+			margin-bottom: 14px
+		&__cta 
+			margin-bottom: 25px
+		&__mail 
+	.map 
+		height: 550px
+		width: 100%
+
+@media (min-width: 860px)
+	.contacts 
+		&-block 
+			&__title 
+				margin-left: 30px
+			&__descr 
+				margin-left: 30px
+			&__address 
+				&:before 
+					content: ''
+					display: block
+					width: 17px
+					height: 25px
+					position: absolute
+					background: url(../img/contacts/mark.png)
+			&__phone 
+				&:before 
+					content: ''
+					display: block
+					width: 15px
+					height: 22px
+					position: absolute
+					background: url(../img/contacts/phone.png)
+			&__mail 
+				&:before 
+					content: ''
+					display: block
+					width: 20px
+					height: 14px
+					position: absolute
+					margin-top: 3px
+					background: url(../img/contacts/mail.png)
+@media (max-width: 860px)
+	.contacts 
+		h2 
+			text-transform: uppercase
+			display: block
+			margin-bottom: 12px
+			margin-top: 10px
+		&-block 
+			top: 0
+			left: 0
+			width: 100%
+			text-align: center
+			&__address 
+				margin-bottom: 18px
+			&__cta 
+				margin-bottom: 20px
+		.map-wrapper
+			padding-top: 400px
+			height: 820px
+			width: 90%
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 15px
+			.map 
+				height: 420px

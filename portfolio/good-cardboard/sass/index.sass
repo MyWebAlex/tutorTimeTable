@@ -1,0 +1,78 @@
+body
+	margin: 0
+	padding: 0
+	font-family: 'Roboto', sans-serif
+
+*
+	outline: none
+input, button 
+	border: none
+button
+	cursor: pointer
+
+@import 'variables'
+@import 'menu'
+@import 'header'
+@import 'main'
+@import 'modal'
+@import 'features'
+@import 'products'
+@import 'contact'
+@import 'production'
+@import 'clients'
+@import 'feedback'
+@import 'contacts'
+@import 'media'
+@import 'animation'
+
+@media (min-width: 992px) 
+  .container 
+    width: 968px 
+
+img
+	max-width: 100%
+
+.call-btn
+	background-color: $active-color
+	font-size: 14px
+	color: $text-c-l
+	padding: 13px 22px
+	border-radius: 5px
+	&-o 
+		padding: 11px 20px
+		background-color: transparent
+		color: $text-c-d
+		border: 1px solid rgba(#373737, 0.5)
+	img
+		vertical-align: middle
+.big-main-btn
+	padding-top: 15px
+	padding-bottom: 15px
+	vertical-align: middle
+.section-title 
+	font-size: 27px
+	font-weight: 700
+	text-transform: uppercase
+	text-align: center
+	margin-bottom: 29px
+	&::after 
+		content: ''
+		display: block
+		height: 6px
+		background: url(../img/line.png) center no-repeat
+		margin-top: 12px
+
+footer 
+	height: 88px
+	width: 100%
+	background-color: #1b1b1b
+	display: flex
+	justify-content: center
+	align-items: center
+	p 
+		opacity: 0.5
+		color: #ffffff
+		font-family: Roboto
+		font-size: 13px
+		font-weight: 300
+		line-height: 17px

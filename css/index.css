@@ -1,0 +1,314 @@
+* {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+}
+
+.container .pop-modifier {
+  display: none;
+  height: 200px;
+  width: 150px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #00ff0d;
+  -webkit-box-shadow: 0 0 5px;
+          box-shadow: 0 0 5px;
+}
+
+.container .pop-modifier #entry__delete__btn {
+  cursor: pointer;
+}
+
+.container .pop-modifier #entry__price__input {
+  width: 100px;
+}
+
+.container .timetable {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (10%)[10];
+      grid-template-rows: repeat(10, 10%);
+  -ms-grid-columns: 0.7fr (1fr)[7];
+      grid-template-columns: 0.7fr repeat(7, 1fr);
+  border: #000 solid 1px;
+}
+
+.container .timetable .time {
+  border: #000 solid 1px;
+}
+
+.container .timetable .time ul {
+  width: 96%;
+  height: 96%;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.container .timetable .time ul li {
+  width: 100%;
+  cursor: pointer;
+}
+
+.container .timetable .time ul li:hover {
+  color: #ff0000;
+}
+
+.container .students {
+  display: -ms-grid;
+  display: grid;
+  overflow-y: scroll;
+  border-radius: 10px;
+  row-gap: 5px;
+}
+
+.container .students .student__new {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  background: -webkit-gradient(linear, left bottom, right top, from(#3EC97A), color-stop(80%, #69EA49), to(#fff));
+  background: linear-gradient(to top right, #3EC97A, #69EA49 80%, #fff 100%);
+  border-radius: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.container .students .student__new:hover {
+  background: -webkit-gradient(linear, left bottom, right top, from(#34af69), color-stop(80%, #69EA49), to(#fff));
+  background: linear-gradient(to top right, #34af69, #69EA49 80%, #fff 100%);
+}
+
+.container .students .student {
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  height: 40px;
+  font-size: 20px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, right top, from(#3EC97A), color-stop(80%, #69EA49), to(#fff));
+  background: linear-gradient(to top right, #3EC97A, #69EA49 80%, #fff 100%);
+  border-radius: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.container .students .student .student__header {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: (20px)[2];
+      grid-template-rows: repeat(2, 20px);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-areas: "name name name name info" "name name name name info";
+}
+
+.container .students .student .student__header .student__name {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: name;
+}
+
+.container .students .student .student__header .student__info {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  grid-area: info;
+}
+
+.container .students .student .student__settings {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: (50px)[4];
+      grid-template-rows: repeat(4, 50px);
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: "name-label name-changer" "phone-label phone-changer" "cours-label cours-changer" "more-label more-changer";
+}
+
+.container .students .student:hover {
+  background: -webkit-gradient(linear, left bottom, right top, from(#34af69), color-stop(80%, #69EA49), to(#fff));
+  background: linear-gradient(to top right, #34af69, #69EA49 80%, #fff 100%);
+}
+
+.container .students .student .student__name {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: name;
+}
+
+.container .students .student .student__phone {
+  grid-area: phone;
+}
+
+.container .students .student .student__cours {
+  grid-area: cours;
+}
+
+.container .students .student .student__social {
+  grid-area: social;
+}
+
+.container .students .student .student__more {
+  grid-area: more;
+}
+
+.container .students .student .changer {
+  height: 20px;
+  width: 250px;
+}
+
+.container .students .student .label {
+  font-size: 20px;
+}
+
+.container .students .student .student__name-label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name-label;
+}
+
+.container .students .student .student__phone-label {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: phone-label;
+}
+
+.container .students .student .student__cours-label {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: cours-label;
+}
+
+.container .students .student .student__more-label {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: more-label;
+}
+
+.container .students .student .student__name-changer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name-changer;
+}
+
+.container .students .student .student__phone-changer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: phone-changer;
+}
+
+.container .students .student .student__cours-changer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: cours-changer;
+}
+
+.container .students .student .student__more-changer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: more-changer;
+}
+
+.container .students .student_more {
+  height: 300px;
+}
+
+.container .students .student_more .student__name-label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name-label;
+}
+
+.container .students .student_more .student__phone-label {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: phone-label;
+}
+
+.container .students .student_more .student__cours-label {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: cours-label;
+}
+
+.container .students .student_more .student__more-label {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: more-label;
+}
+
+.container .students .student_more .student__name-changer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name-changer;
+}
+
+.container .students .student_more .student__phone-changer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: phone-changer;
+}
+
+.container .students .student_more .student__cours-changer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: cours-changer;
+}
+
+.container .students .student_more .student__more-changer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: more-changer;
+}
+
+.hide {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.hovered {
+  background-color: red;
+}
+/*# sourceMappingURL=index.css.map */

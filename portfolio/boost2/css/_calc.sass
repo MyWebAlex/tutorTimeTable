@@ -1,0 +1,355 @@
+.calc-section
+  width: 900px
+  margin-left: auto
+  margin-right: auto
+  padding-top: 24px
+.calc 
+  padding-top: 0
+  &__space1 
+    height: 100px
+  &__space2 
+    height: 26px
+  &__space3 
+    height: 45px
+  &-bottom 
+    display: flex
+    justify-content: space-between
+  &-right 
+    display: flex
+    justify-content: center
+    align-items: center
+
+.mmr-counter
+  width: 542px
+  margin-left: auto
+  margin-right: auto
+  display: flex
+  &__wrapper
+    height: 100px
+    text-align: center
+  &__word 
+    color: #699ffc
+    font-size: 18px
+    font-weight: bold
+  &__input
+    width: 167px
+    height: 51px
+    background-color: #ffffff
+    border-radius: 15px
+    text-align: center
+    font-weight: 500
+    &::placeholder
+      opacity: 1
+    &:focus::placeholder
+      opacity: 0
+      transition: 0.2s
+    &_blue
+      color: #0e56d1
+      font-size: 29px
+      &::placeholder
+        color: #0e56d1
+    &_orange
+      color: #ff8a00
+      font-size: 33px
+      box-shadow: -1px 1px 6px 1px rgba(2, 38, 113, 0.65)
+      &::placeholder
+        color: #ff8a00
+  &__arrows 
+    width: 120px
+    background-image: url(../img/calc/arrows.png)
+
+.price-form 
+  width: 1027px
+  height: 622px
+  border: 2px solid #ffffff
+  border-radius: 6px
+  background-image: linear-gradient(39deg, #1651b9 0%, #1651b9 26%, #0060ff 100%)
+  margin-left: auto
+  margin-right: auto
+
+.check
+  &__space 
+    height: 18px
+  &__box
+    display: none
+  &__label 
+    cursor: pointer
+    padding-left: 0
+    color: #ffffff
+    font-family: Bahnschrift
+    font-size: 24px
+    font-weight: 400
+    font-style: italic
+  &__label::before
+    content: ""
+    display: inline-block
+    height: 25px
+    width: 25px
+    margin: 0 8px 0 0
+    background: url("../img/calc/checkbox.jpg")
+    background-position: 0 -25px
+    transition: 0.3s
+  &__box:checked + &__label::before 
+    background-position: 0 0
+    box-shadow: 0 0 5px rgba(252, 252, 252, 0.75)
+
+.calc-discount 
+  width: 351px
+  height: 48px
+  box-shadow: inset 0 0 6px rgba(8, 44, 105, 0.75)
+  background-color: #ffffff
+  color: #3c6aba
+  font-size: 22px
+  font-weight: 400
+  text-transform: uppercase
+  padding-left: 18px
+  &::placeholder
+    color: #3c6aba
+    opacity: 1
+  &:focus::placeholder
+    opacity: 0
+    transition: 0.2s
+
+.price 
+  margin-right: 50px
+  width: 215px
+  height: 215px
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.49)
+  border-radius: 50%
+  background-color: #ffffff
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  &__number 
+    color: #06cf0b
+    font-size: 39px
+    font-weight: bold
+    font-style: italic
+  &__time 
+    color: #1b4394
+    font-size: 21px
+    font-weight: bold
+    font-style: italic
+    img
+      vertical-align: middle
+    span 
+      vertical-align: middle
+
+.btn-next 
+    width: 334px
+    height: 51px
+    border: 3px solid #fff
+    border-radius: 5px
+    display: flex
+    align-items: center
+    color: #ffffff
+    font-family: Bahnschrift, "Arial MT", sans-serif
+    font-size: 22px
+    font-weight: bold
+    cursor: pointer
+    &_first
+      box-shadow: -3px 3px 6px rgba(21, 82, 188, 0.75)
+      background-color: #0b9a59
+      transition: 0.2s
+      &:hover 
+        background-color: darken(#0b9a59, 10%)
+      &__wrapper
+        width: 100%
+        display: flex
+        justify-content: flex-end
+        padding-top: 40px
+      &__img
+        width: 46px
+        height: 51px
+        display: flex
+        justify-content: center
+        align-items: center
+      &__text 
+        display: flex
+        justify-content: center
+        align-items: center
+        border-left: 3px solid #fff
+        height: 51px  
+        width: 285px
+      
+        
+.steam 
+  &-title 
+    color: #ffffff
+    font-size: 41px
+    font-weight: bold
+    width: 100%
+    display: block
+    text-align: center
+    overflow: hidden
+    white-space: nowrap
+    margin-bottom: 32px
+    &_payment 
+      margin-bottom: 0
+    div
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      img
+        vertical-align: middle
+      span
+        vertical-align: middle
+      &:before
+        content: ""
+        position: absolute
+        top: 50%
+        right: 100%
+        margin-right: 15px
+        width: 9999px
+        height: 2px
+        background: #fff
+      &:after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 100%
+        margin-left: 15px
+        width: 9999px
+        height: 2px
+        background: #fff
+  &-descr
+    width: 100%
+    display: flex
+    color: #ffffff
+    font-size: 20px
+    font-weight: bold
+    &__left 
+      width: 50%
+      padding-right: 10px
+    &__right
+      width: 50%
+      padding-left: 10px
+.btn-no-guard 
+  width: 252px
+  height: 32px
+  background-color: #f92424
+  color: #ffffff
+  font-size: 16px
+  font-weight: bold
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 10px
+  cursor: pointer
+  transition: 0.2s
+  &:hover
+    background-color: darken(#f92424, 10%)
+  span 
+    margin-right: 10px
+    font-weight: 900
+    font-size: 30px
+.pulse 
+  animation-iteration-count: infinite
+
+.family-share 
+  padding-top: 30px
+
+.payment 
+  background: url(../img/steam/pay-bg.png) center no-repeat
+  &__descr 
+    text-shadow: -1px 0 2px rgba(0, 0, 0, 0.75)
+    color: #ffffff
+    font-size: 20px
+    text-align: center
+    line-height: 35px
+    font-weight: bold
+    margin-bottom: 35px
+  &-methods 
+    width: 600px
+    height: 350px
+    &__bg 
+      width: 100%
+      height: 280px
+      background-color: rgba(0, 0, 0, 0.2)
+      padding: 10px
+    &__table 
+      width: 100%
+      height: 100%
+      color: #ffffff
+      font-size: 24px
+      font-weight: bold
+      tr:hover 
+        
+      &_td1 
+        width: 100px
+      &_td2 
+        width: 200px
+      &_td3 
+        width: 300px
+        text-align: center
+
+
+
+.nav-btns
+  display: flex
+  justify-content: space-between
+  align-items: center
+  justify-content: flex-end
+  margin-right: 10px
+  &_steam
+    margin-top: 49px
+  &_family-share 
+    margin-top: 120px
+  .btn
+    color: #fefffe
+    font-family: Bahnschrift
+    font-size: 22px
+    font-weight: bold
+    border: 1px solid #ffffff
+    display: flex
+    justify-content: space-around
+    align-items: center
+    cursor: pointer
+    transition: 0.2s
+    img 
+      border-left: 1px solid #fff
+      height: 45px
+    &_prev
+      width: 156px
+      height: 45px
+      margin-right: 50px
+      background-color: #fe1515 
+      &:hover
+        background-color: darken(#fe1515, 10%) 
+    &_next
+      width: 236px
+      height: 45px
+      background-color: #25a141
+      &:hover
+        background-color: darken(#25a141, 10%) 
+
+.noUi
+  &-target 
+    height: 10px !important
+    width: 900px !important
+    margin-left: auto !important
+    margin-right: auto !important
+  &-handle 
+    border-radius: 10px !important
+    width: 10px !important
+    height: 20px !important
+    background-color: #ffffff !important
+    right: -5px !important
+    &:before 
+      display: none !important
+    &:after 
+      display: none !important
+  &-marker
+    display: none
+  &-value 
+    color: #fff
+    margin-top: -50px
+    font-weight: 700 
+    font-style: italic
+  &-tooltip 
+    margin-bottom: -50px
+  &-connect 
+    background-image: linear-gradient(86deg, rgba(255, 110, 2, 1) 0%, rgba(255, 255, 0, 1) 50%, rgba(255, 109, 0, 1) 100%) !important
+  &-pips 
+    height: 0 !important

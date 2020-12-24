@@ -1,0 +1,325 @@
+@media (max-width: 576px)
+	.hidden-mobile
+		display: none
+	.header
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 1000
+		text-align: center
+		&__logo
+			background: $active-color url(../img/logo-mobile.png) center no-repeat
+			width: 35px
+			height: 35px
+		&__contacts
+			&__wrapper
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				margin-top: 5px
+				&__phone
+					font-size: 14px
+					padding-left: 0
+					margin-right: auto 
+					&-b
+						border-left: none
+					.bold-phone 
+						font-weight: 700
+		.call-btn
+			display: inline-block
+			vertical-align: middle
+			width: 40px
+			height: 40px
+			padding: 0
+			img 
+				width: 20px
+	.main
+		margin-top: 50px
+		text-align: center
+		padding-top: 50px
+		&__text
+			&__title
+				color: $active-color
+				font-size: 22px
+			&__subtitle
+				font-size: 18px
+				margin-bottom: 40px
+			&__form
+				background-color: transparent
+				padding: 10px
+				&__title
+					padding-right: 0
+					font-size: 15px
+					line-height: 1.4
+				.main__form
+					display: block
+					text-align: center
+					input
+						display: block
+						margin-bottom: 13px
+						margin-left: auto
+						margin-right: auto
+						text-align: center
+					button
+						display: block
+						margin-left: auto
+						margin-right: auto
+						padding-top: 20px
+						padding-bottom: 20px
+	.overlay
+		.popup 
+			margin-top: -50px
+			width: 90%
+			&__form 
+				text-align: center
+				padding: 20px 5px 20px 5px
+				&__main-form
+					&__header 
+						font-size: 22px
+						span 
+							font-size: 18px
+					&__label 
+						font-size: 14px	
+					&__input 
+						width: 90%
+	.features
+		.numbers 
+			&-block 
+				display: block
+				width: 100%
+				margin-bottom: 24px
+		&-block 
+			margin-bottom: 8px
+			margin-left: auto
+			margin-right: auto
+	.clients
+		&-box
+			height: 87px
+			margin-bottom: 7px
+			&__img 
+				max-height: 85px
+		.mob-clients
+			&-l 
+				padding-right: 2.5px
+			&-r 
+				padding-left: 2.5px
+	.production
+		padding-top: 28px
+		padding-bottom: 56px
+		&-text 
+			margin-top: 17px
+			&__title
+				position: absolute
+				top: 0
+				left: 0
+				margin-left: 0
+				margin-right: 0
+				width: 100vw	
+			&__descr
+				margin-top: 70px
+				text-align-last: center
+		.production-slider
+			margin-left: 15px
+			margin-right: 15px
+			&_top
+				height: 380px
+				img 
+					height: 380px
+					object-fit: cover
+			&_bottom 
+				display: none
+		&-text 
+			text-align: center
+			&__title 
+				justify-content: center
+				width: 100%
+				margin-left: 0
+				padding-left: 0
+			&__descr 
+				font-size: 14px
+				margin-bottom: 22px
+		.slider-arrow
+			&_mobile
+				display: block
+				position: absolute
+				top: 150px
+				z-index: 99
+				height: 80px
+				width: 22px
+				cursor: pointer
+				background-color: #fff
+			&_left 
+				background: $active-color url(../img/production/arrow-left-active.png) center no-repeat
+			&_right 
+				background: $active-color url(../img/production/arrow-right-active.png) center no-repeat
+	.feedback 
+		.slider-arrow 
+			&_feed 
+				display: block
+				position: absolute
+				top: 170px
+				z-index: 99
+				height: 80px
+				width: 22px
+				cursor: pointer
+			&_left 
+				background: $active-color url(../img/production/arrow-left-active.png) center no-repeat
+			&_right 
+				background: $active-color url(../img/production/arrow-right-active.png) center no-repeat
+	.contact 
+		&__title 
+			font-size: 20px
+		&__subtitle
+			font-size: 16px
+		&__form 
+			p 
+				font-size: 14px
+			&__input 
+				width: 290px
+	.menu-big
+		display: none
+	.header 
+		padding-top: 15px
+	
+	.footer 
+		p 
+			font-size: 11px
+
+
+@media (min-width: 577px) and (max-width: 768px)
+	.hidden-mobile
+		display: none
+	.header
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 10
+		text-align: centers
+		&__logo
+			background: $active-color url(../img/logo-mobile.png) center no-repeat
+			width: 35px
+			height: 35px
+	.header
+		&__logo
+			margin-left: 10px
+		&__contacts
+			&__wrapper
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				&__phone 
+					font-size: 18px
+					.bold-phone 
+						font-weight: 700
+					&-b
+						border-left: none
+		.call-btn
+			vertical-align: middle
+			span 
+				display: none
+	.main 
+		margin-top: 50px
+		text-align: center
+		&__ing 
+			display: none
+		&__text
+			&__form
+				&__title 
+					padding-right: 0
+	.overlay
+		.popup 
+			width: 90%
+	.features
+		.numbers 
+			&-block 
+				display: block
+				width: 100%
+				margin-bottom: 24px
+		&-block 
+			margin-bottom: 8px
+			margin-left: auto
+			margin-right: auto
+	.production
+		&-text 
+			text-align: center
+			&__title 
+				justify-content: center
+				width: 100%
+				margin-left: 0
+				padding-left: 0
+			&__descr 
+				margin-bottom: 22px
+	.menu-big
+		display: none
+	.header 
+		padding-top: 15px
+
+@media (min-width: 769px) and (max-width: 992px)
+	.header
+		&__contacts 
+			&__wrapper
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				&__phone 
+					font-size: 18px
+					&-b
+						border-left: none
+					.bold-phone 
+						font-weight: 700
+		.call-btn
+			vertical-align: middle
+	.main 
+		&__img 
+			display: none
+	.features
+		.numbers 
+			&-block 
+				width: 49.5%
+				margin-bottom: 24px
+		&-block 
+			margin-bottom: 40px
+	.production
+		&-text 
+			text-align: center
+			&__title 
+				justify-content: center
+				width: 100%
+				margin-left: 0
+				padding-left: 0
+			&__descr 
+				margin-bottom: 22px
+	.menu-big
+		.menu__list__item 
+			font-size: 10px
+			padding-right: 6px
+	.header 
+		padding-top: 61px
+	.menu-link 
+		display: none
+
+@media (min-width: 922px)
+	.clients
+		&-box
+			filter: grayscale(100%)
+			&:hover 
+				filter: grayscale(0%)
+	.call-btn
+		&-o 
+			&:hover 
+				background-color: lighten($active-color, 5)
+				color: $text-c-l
+				border: 1px solid lighten($active-color, 5)
+		&:hover
+			background-color: lighten($active-color, 5)
+	.slider-arrow
+		&_left 
+			&:hover 
+				background: $active-color url(../img/production/arrow-left-active.png) center no-repeat
+		&_right 
+			&:hover 
+				background: $active-color url(../img/production/arrow-right-active.png) center no-repeat
+	.menu-link 
+		display: none

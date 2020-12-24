@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dark Crew</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<meta property="og:image" content="img/ranks/rank0.png" />
+	<link href="css/index.css" rel="stylesheet">
+	<link href="css/bootstrap-grid.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="our-name">
+			<img src="img/raccoon.png" alt="logo raccoon" class="our-name__raccoon">
+			<h1 class="our-name__text">Dark Crew</h1>
+		</div>
+		<div class="do-it">
+			ПОЛУЧИ МАКСИМАЛЬНЫЙ РАНГ<br>
+			В НОВОМ СЕЗОНЕ,<br>
+			ДОВЕРИВШИСЬ ПРОФЕССИОНАЛАМ
+		</div>
+	</div>
+	<div class="mmr">
+		<div class="container">
+			<div class="row eto-kod-muhacheva-alexandra">
+				<div class="col-12">
+					<div class="mmr__current-mmr">
+						<div class="mmr__current-mmr__title">
+							Текущий MMR
+						</div>
+						<input class="mmr__current-mmr__number" type="text" value="3600" maxlength="4">
+						</input>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="feature-mmr">
+		<div class="container">
+			<div class="feature-mmr__title">
+				МОЖНО ПОЛУЧИТЬ
+			</div>
+			<div class="feature-mmr__icon eto-kod-muhacheva-alexandra">
+				<img src="img/ranks/rank26.png" alt="" class="feature-mmr__icon__img">
+				<div class="feature-mmr__title">
+					MMR
+				</div>
+				<div class="feature-mmr__number">
+					4000+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="price">
+		<div class="container">
+			<div class="price__blank">
+				<div class="price__blank__old">
+					1600₽
+				</div>
+				<div class="price__blank__new">
+					1050₽
+				</div>
+					<a href="#order" class="price__blank__btn">оформить заказ</a>
+			</div>
+		</div>
+	</div>
+
+	<svg class="editorial eto-kod-muhacheva-alexandra" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+	 preserveAspectRatio="none">
+		<defs>
+			<path id="gentle-wave" d="M-160 44c30 0 
+	    58-18 88-18s
+	    58 18 88 18 
+	    58-18 88-18 
+	    58 18 88 18
+	    v44h-352z" />
+		</defs>
+		<g class="parallax">
+			<!-- <use xlink:href="#gentle-wave" x="50" y="0" fill="#eee" /> -->
+			<!-- <use xlink:href="#gentle-wave" x="50" y="3" fill="#d2e4ff" /> -->
+			<use xlink:href="#gentle-wave" x="50" y="6" fill="#f1f7f8" />
+		</g>
+	</svg>
+	<div class="white"></div>
+
+	<div class="order" id="order">
+		<div class="order__title">
+			<img src="img/order-title.png" alt="">
+			Оформление заказа
+		</div>
+		<div class="order__mmr">
+			<img src="img/ranks/rank25.png" alt="" class="order__mmr__rank">
+			<form action="mailer/smart.php" method="POST">
+				<p class="order__mmr__current">Введите ваш MMR</p>
+				<input type="text" class="order__mmr__current-mmr" value="3600" maxlength="4" name="mmr" required>
+
+				<p class="check"><label><input type="checkbox" class="check-fast" name="fast">Выполнить заказ быстрее +20%</label></p>
+
+				<p class="check"><label><input type="checkbox" class="check-guard" name="guard">Не отключать Steam Guard + 15%</p></label>
+
+				<input type="text" class="order__mmr__coupon" placeholder="Код купона" name="code"> 
+
+				<input type="text" class="order__mmr__steam" placeholder="Логин Steam" name="login" required>
+
+				<p class="order__mmr__price"><span class="order__mmr__price__number">1050</span> <span>руб.</span></p>
+
+				<button type="button" class="price__blank__btn order__mmr__btn">Оформить заказ</button>
+
+				<div class="overlay opa">
+					<div class="modal">
+						<div class="modal__message">
+							Пожалуйста, выберите способ оплатыи нажмите кнопку "Оплатить", после чего ОБЯЗАТЕЛЬНО укажите свои логин и пароль от Steam в комментарии к платежу. <br> Также добавьте нас в Вконтакте, чтобы своевременно получить уведомлении об окончании калибровки вашего аккаунта <a href="https://vk.me/dadaev.alik" target="_blank">vk.com/dadaev.alik</a>
+						</div>
+						<div class="modal__payments">
+							<img src="img/sb.png" alt="" class="modal__payments__one pay-one">
+							<img src="img/yamoney.png" alt="" class="modal__payments__one pay-two active">
+							<img src="img/webmoney.png" alt="" class="modal__payments__one pay-three">
+							<img src="img/Qiwi.png" alt="" class="modal__payments__one pay-four eto-kod-muhacheva-alexandra">
+						</div>
+						<div class="modal__dlya-tupyh">
+							<img src="img/comment2.jpg" class="modal__dlya-tupyh__img">
+						</div>
+						<div class="modal__form">
+							Логин Steam
+							<input type="text" class="order__mmr__steam modal__login" placeholder="Логин Steam" disabled>
+							Способ оплаты
+							<select name="payment" class="modal__pay-select" required>
+
+								<option value="" disabled selected>Выберите способ оплаты</option>
+								<option value="sb">Сбербанк Онлайн</option>
+								<option value="ya">Яндекс Деньги</option>
+								<option value="wm">WebMoney</option>
+								<option value="qw">Qiwi Wallet</option>
+							</select>
+							<button type="button" class="order__mmr__steam modal__pay-info">Счёт</button>
+							К оплате
+							<input type="text" class="modal__price" disabled>
+							<input type="text" class="modal__price hide" name="price">
+							<p>
+								<button type="submit" class="price__blank__btn modal__btn">Оплатить</button>
+								<div class="modal__close">Закрыть</div>
+							</p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="mobile">
+		<p>Cделайте скриншот данных в форме и отправьте его нам вконтакте. Там же не забудьте указать свой пароль от Steam аккаунта.</p> <a href="https://vk.me/dadaev.alik"
+		target="_blank"><img src="img/vk.jpg" alt=""></a><br><br>
+		Логин
+		<p class="mob-login blue">login</p>
+		Рейтинг
+		<p class="mob-mmr blue">3600</p>
+		Цена
+		<p class="mob-price blue">1050</p>
+		<p><span class="mob-fast">Fast</span> <span class="mob-guard">Guard</span> <span class="mob-code">Promo-code</span></p>
+	</div>
+</body>
+</html>
